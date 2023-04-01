@@ -71,32 +71,6 @@ class Register extends CI_Controller {
             $this->load->model('RegisterModel');
              if($this->RegisterModel->newMember($data)){
 
-                //gmail
-                $config['protocol'] = 'smtp';
-                $config['smtp_host'] = 'smtp.gmail.com';
-                $config['smtp_timeout'] = 30;
-                $config['smtp_crypto'] = 'tls'; //tls ssl
-                $config['smtp_port'] = 587; //587 465
-
-
-                $config['smtp_user'] = 'careerpathway.co@gmail.com';
-                $config['smtp_pass'] = 'P@$$w0rd11';
-
-                $this->email->initialize($config);
-                $this->email->set_newline("\r\n");
-                $this->email->to($this->input->post('email'));
-                $this->email->from('careerpathway.co@gmail.com','Name of Association');
-                $this->email->cc('abnite@gmail.com');
-                $this->email->bcc('careerpathway.co@gmail.com');
-
-                $this->email->subject('Members Club Association Registration');
-                $this->email->message('Congratulations!! '.$this->input->post('firstname'));
-
-                if($this->email->send()){
-                    echo 'Email sent';
-                }else{
-                    $this->session->set_flashdata('msg',$this->email->print_debugger());
-                }
 
                 $this->session->set_flashdata('msg', ' Registration Successful');
              }else{

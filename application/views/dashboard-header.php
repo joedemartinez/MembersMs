@@ -7,6 +7,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Joshua Appiah Dadzie project">
+  <meta name="keywords" content="Joshua Appiah Dadzie, project, membership">
+  <meta name="author" content="Joshua Appiah Dadzie">
   <title><?= (isset($pageTitle)) ? $pageTitle : 'Page' ?></title>
   <base href="/">
 
